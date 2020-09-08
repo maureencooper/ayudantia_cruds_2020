@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mis Series</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Puntuacion</th>
+      <th>Comentario</th>
+      <th colspan="3"> Acciones </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @series.each do |serie| %>
+      <tr>
+        <td><%= serie.nombre %></td>
+        <td><%= serie.puntuacion %></td>
+        <td><%= serie.comentario %></td>
+        <td><%= link_to 'Ver detalle', serie_path(serie.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar Serie', series_new_path %>

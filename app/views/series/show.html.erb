@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @serie.nombre %>
+</p>
+
+<p>
+  <strong>Puntuacion:</strong>
+  <%= @serie.puntuacion %>
+</p>
+
+<p>
+  <strong>Comentario:</strong>
+  <%= @serie.comentario %>
+</p>
+
+<%= link_to 'Editar serie', serie_edit_path(@serie.id) %>
+<%= link_to 'Volver a mis series', series_index_path %>
+<%= link_to 'Eliminar serie', serie_path(@serie.id), method: :delete, data: {confirm: "Estas seguro?"} %>

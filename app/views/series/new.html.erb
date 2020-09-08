@@ -1,0 +1,24 @@
+<h1>Nueva Serie de pana</h1>
+
+<p id="notice"> <%= notice %> </p>
+
+<%= form_with(model: @serie, method: :post) do |form| %>
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :puntuacion %>
+    <%= form.number_field :puntuacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comentario %>
+    <%= form.text_field :comentario %>
+  </div>
+
+  <div class="action">
+    <%= form.submit %>
+  </div>
+<% end %>
