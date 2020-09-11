@@ -8,7 +8,7 @@ class SeriesController < ApplicationController
     @serie = Serie.create(@series_params)
 
     if @serie.save
-      redirect_to series_new_path, notice: "Serie agregada exitosamente."
+      redirect_to series_index_path, notice: "Serie agregada exitosamente."
     else
       redirect_to series_new_path, notice: "Error al guardar serie"
     end
@@ -33,7 +33,7 @@ class SeriesController < ApplicationController
     if @serie.update(@series_params)
       redirect_to serie_path(params[:id]), notice: 'Serie actualizada!' #Notar que params[:id] == @serie.id
     else
-      redirect_to series_edit(@serie.id), notice: "Error al actualizar serie :("
+      redirect_to serie_edit_path(@serie.id), notice: "Error al actualizar serie :("
     end
   end
 
